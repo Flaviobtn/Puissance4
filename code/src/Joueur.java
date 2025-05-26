@@ -22,13 +22,14 @@ public class Joueur {
         this.couleur = couleur;
     }
 
-    public placerJetons(Grille grille, int colonne){
-        if (grille.placerJeton(this, colonne, couleur)) {
+    public void placerJetons(Grille grille, int colonne){
+        try{
+            grille.modifJeton(colonne, couleur);
             System.out.println("Jeton placé dans la colonne " + colonne);
-        } else {
-            System.out.println("Impossible de placer le jeton dans la colonne " + colonne);
+        } 
+        catch (PlusDePlaceExecption e) {
+            System.out.println(e.getMessage());
         }
-    }
     @Override
     public String toString() {
         return "Joueur{" + "pseudo= " + pseudo + ", couleur= " + couleur + '}';
