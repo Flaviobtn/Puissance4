@@ -119,17 +119,17 @@
          <right>
             <HBox id="boutonsTop" fx:id="boutonsTop" prefHeight="86.0" prefWidth="216.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button id="boutonMaison" fx:id="boutonMaison" mnemonicParsing="false" prefHeight="26.0" prefWidth="61.0" text="maison">
+                  <Button id="boutonMaison" fx:id="boutonMaison" mnemonicParsing="false" onAction="#handleButtonAccueil" prefHeight="26.0" prefWidth="61.0" text="maison">
                      <HBox.margin>
                         <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
                      </HBox.margin>
                   </Button>
-                  <Button id="butonParam" fx:id="boutonParam" layoutX="60.0" layoutY="40.0" mnemonicParsing="false" text="param">
+                  <Button id="butonParam" fx:id="boutonParam" layoutX="60.0" layoutY="40.0" mnemonicParsing="false" onAction="#handleButtonParametres" text="param">
                      <HBox.margin>
                         <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
                      </HBox.margin>
                   </Button>
-                  <Button id="butonQuitter" fx:id="boutonQuitter" layoutX="173.0" layoutY="10.0" mnemonicParsing="false" text="quitter">
+                  <Button id="butonQuitter" fx:id="boutonQuitter" layoutX="173.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleButtonQuitter" text="quitter">
                      <HBox.margin>
                         <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
                      </HBox.margin>
