@@ -6,6 +6,6 @@ public class Grille {
 
     public Grille(int longueur, int largeur){
         String[][] martice = new String[6][7];
-        for(String)
+        for()
     }
 }
