@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane id="jeu" prefHeight="200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane id="jeu" fx:id="root" prefHeight="200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <bottom>
-      <HBox id="bottom_jeu" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <HBox id="bottom_jeu" fx:id="bottomJeu" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label id="tour" text="C'est au tour de : *joueur*">
+            <Label id="tour" fx:id="labelJoueur" text="C'est au tour de : *joueur*">
                <font>
                   <Font size="22.0" />
                </font>
@@ -23,7 +23,7 @@
                   <Insets left="30.0" top="30.0" />
                </HBox.margin>
             </Label>
-            <Label id="timer" alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="Timer : 00:00">
+            <Label id="timer" fx:id="timer" alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="Timer : 00:00">
                <font>
                   <Font size="25.0" />
                </font>
@@ -35,7 +35,7 @@
       </HBox>
    </bottom>
    <center>
-      <GridPane id="grille" gridLinesVisible="true" minHeight="-Infinity" minWidth="-Infinity" BorderPane.alignment="CENTER">
+      <GridPane id="grille" fx:id="grilleJeu" gridLinesVisible="true" minHeight="-Infinity" minWidth="-Infinity" BorderPane.alignment="CENTER">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -105,9 +105,9 @@
       </GridPane>
    </center>
    <top>
-      <BorderPane id="top" prefHeight="50.0" prefWidth="733.0" BorderPane.alignment="CENTER">
+      <BorderPane id="top" fx:id="banniere" prefHeight="50.0" prefWidth="733.0" BorderPane.alignment="CENTER">
          <left>
-            <Label id="labelMode" text="Mode de jeu" BorderPane.alignment="CENTER">
+            <Label id="labelMode" fx:id="modeDeJeu" text="Mode de jeu" BorderPane.alignment="CENTER">
                <font>
                   <Font size="36.0" />
                </font>
@@ -117,19 +117,19 @@
             </Label>
          </left>
          <right>
-            <HBox id="boutonsTop" prefHeight="86.0" prefWidth="216.0" BorderPane.alignment="CENTER">
+            <HBox id="boutonsTop" fx:id="boutonsTop" prefHeight="86.0" prefWidth="216.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button id="boutonMaison" mnemonicParsing="false" prefHeight="26.0" prefWidth="61.0" text="maison">
+                  <Button id="boutonMaison" fx:id="boutonMaison" mnemonicParsing="false" prefHeight="26.0" prefWidth="61.0" text="maison">
                      <HBox.margin>
                         <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
                      </HBox.margin>
                   </Button>
-                  <Button id="butonParam" layoutX="60.0" layoutY="40.0" mnemonicParsing="false" text="param">
+                  <Button id="butonParam" fx:id="boutonParam" layoutX="60.0" layoutY="40.0" mnemonicParsing="false" text="param">
                      <HBox.margin>
                         <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
                      </HBox.margin>
                   </Button>
-                  <Button id="butonQuitter" layoutX="173.0" layoutY="10.0" mnemonicParsing="false" text="quitter">
+                  <Button id="butonQuitter" fx:id="boutonQuitter" layoutX="173.0" layoutY="10.0" mnemonicParsing="false" text="quitter">
                      <HBox.margin>
                         <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
                      </HBox.margin>
