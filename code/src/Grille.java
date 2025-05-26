@@ -5,7 +5,13 @@ public class Grille {
     private int largeur;
 
     public Grille(int longueur, int largeur){
-        String[][] martice = new String[6][7];
-        for()
+        Jeton valeurDefaut = new Jeton("blanc");
+        Jeton[][] martice = new Jeton[6][7];
+        for(int i = 0; i < matrice.length; i++){
+            for (int j = 0; j < matrice[i].length; j++) {
+                matrice[i][j] = valeurDefaut;
+            }
+
+        }
     }
 }
