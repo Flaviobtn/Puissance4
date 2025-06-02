@@ -6,9 +6,9 @@ public class Grille {
     private Jeton[][] matrice;
 
     public Grille(){
-        this.matrice = new Jeton[this.hauteur][this.largeur];
-        for(int i = 0; i < this.hauteur; i++){
-            for (int j = 0; j < this.largeur; j++){
+        this.matrice = new Jeton[this.largeur][this.hauteur];
+        for(int i = 0; i < this.largeur; i++){
+            for (int j = 0; j < this.hauteur; j++){
                 Jeton valeurDefaut = new Jeton();
                 this.matrice[i][j] = valeurDefaut;
             }
@@ -28,6 +28,18 @@ public class Grille {
     }
 
     public List<Jeton> getColonne(int numColonne){
+        List<Jeton> colonne = new ArrayList<>();
+        for(int i = 0; i < this.largeur; i++){
+            if(i == numColonne){
+                for(int j = 0; j < this.hauteur; j++){
+                    colonne.add(this.matrice[i][j]);
+                }
+            }
+        }
+        return colonne;
+    }
+
+    public List<Jeton> getLigne(int numColonne){
         List<Jeton> colonne = new ArrayList<>();
         for(int i = 0; i < this.largeur; i++){
             if(i == numColonne){
