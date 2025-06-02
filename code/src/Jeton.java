@@ -32,14 +32,14 @@ public class Jeton{
 
     private void modifJeton(int colonne,String couleur) throws PlusDePlaceException{
         List<Jeton> colonnespec = this.grille.getColonne(colonne);
-        
+
         if(!(colonnespec.get(colonnespec.size()-1).getCouleur().equals("blanc"))){
             throw new PlusDePlaceException();
         }
 
         for(Jeton jeton : colonnespec){
             if(jeton.getCouleur().equals("blanc")){
-                jeton.setCouleur(couleur);
+                jeton.setCouleur(this.couleur);
                 break;
             }
         }
