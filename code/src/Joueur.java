@@ -30,6 +30,7 @@ public class Joueur {
         catch (PlusDePlaceExecption e) {
             System.out.println(e.getMessage());
         }
+    }
     @Override
     public String toString() {
         return "Joueur{" + "pseudo= " + pseudo + ", couleur= " + couleur + '}';
