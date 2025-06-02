@@ -3,20 +3,39 @@ import java.util.*;
 public class Grille {
     private int hauteur = 6;
     private int largeur = 7;
+    private Jeton[][] matrice;
 
     public Grille(){
-        Jeton[][] matrice = new Jeton[this.hauteur][this.largeur];
+        this.matrice = new Jeton[this.hauteur][this.largeur];
         for(int i = 0; i < this.hauteur; i++){
             for (int j = 0; j < this.largeur; j++){
                 Jeton valeurDefaut = new Jeton();
-                matrice[i][j] = valeurDefaut;
+                this.matrice[i][j] = valeurDefaut;
             }
         }
     }
 
-    public boolean placerJeton(int colonne){
-         
+    public Jeton[][] getMatrice(){
+        return this.matrice;
     }
 
+    public int getHauteur(){
+        return this.hauteur;
+    }
 
+    public int getLargeur(){
+        return this.largeur;
+    }
+
+    public List<Jeton> getColonne(int numColonne){
+        List<Jeton> colonne = new ArrayList<>();
+        for(int i = 0; i < this.largeur; i++){
+            if(i == numColonne){
+                for(int j = 0; j < this.hauteur; j++){
+                    colonne.add(this.matrice[i][j]);
+                }
+            }
+        }
+        return colonne;
+    }
 }
