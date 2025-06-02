@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Jeton{
     private String couleur;
+    private Grille grille;
 
     public Jeton(){
         this.couleur = "blanc";
@@ -15,21 +16,32 @@ public class Jeton{
         return this.couleur;
     }
 
-    public int getX(){
-        return this.x;
+    public void setCouleur(String couleur){
+        this.couleur = couleur;
     }
 
-    public int gety(){
-        return this.y;
+    public void placerJetons(Grille grille, int colonne){
+        try{
+            this.modifJeton(colonne, couleur);
+            System.out.println("Jeton placé dans la colonne " + colonne);
+        } 
+        catch (PlusDePlaceException e) {
+            System.err.println(e.getMessage());
+        }
     }
 
-    public void setX(int x){
-        this.x = x;
-    }
+    private void modifJeton(int colonne,String couleur) throws PlusDePlaceException{
+        List<Jeton> colonnespec = this.grille.getColonne(colonne);
+        
+        if(!(colonnespec.get(colonnespec.size()-1).getCouleur().equals("blanc"))){
+            throw new PlusDePlaceException();
+        }
 
-    public void setY(int y){
-        this.y = y;
+        for(Jeton jeton : colonnespec){
+            if(jeton.getCouleur().equals("blanc")){
+                jeton.setCouleur(couleur);
+                break;
+            }
+        }
     }
-
-    public void setCouleur()
 }

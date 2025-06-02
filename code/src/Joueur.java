@@ -21,16 +21,6 @@ public class Joueur {
     public void setCouleur(String couleur) {
         this.couleur = couleur;
     }
-
-    public void placerJetons(Grille grille, int colonne){
-        try{
-            grille.modifJeton(colonne, couleur);
-            System.out.println("Jeton placé dans la colonne " + colonne);
-        } 
-        catch (PlusDePlaceExecption e) {
-            System.out.println(e.getMessage());
-        }
-    }
     @Override
     public String toString() {
         return "Joueur{" + "pseudo= " + pseudo + ", couleur= " + couleur + '}';
